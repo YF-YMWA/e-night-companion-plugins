@@ -1,0 +1,8 @@
+{
+  "name": "云端音色克隆（可选）",
+  "version": "1.0.0",
+  "description": "调用云端音色克隆 HTTP API，把参考音频注册成音色；不内置 Key，不随主框架打包。",
+  "author": "YF-Robot",
+  "homepage": "",
+  "capabilities": ["voice-clone"]
+}

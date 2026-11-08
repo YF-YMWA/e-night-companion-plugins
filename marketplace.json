@@ -137,6 +137,33 @@
       "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/tts-sing-cloud/GUIDE.md",
       "license": "MIT",
       "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
+    },
+    {
+      "id": "tts-cloud-clone",
+      "name": "云端音色克隆",
+      "version": "1.0.0",
+      "description": "调用云端音色克隆 HTTP API，把参考音频注册成音色；不内置 Key；成功后写入语音包。",
+      "author": "ENbot",
+      "capabilities": [
+        "voice-clone"
+      ],
+      "permissions": [
+        "network"
+      ],
+      "requires": {
+        "core": "0.9.69",
+        "runtime": [
+          "云端克隆 API"
+        ],
+        "model": "按厂商"
+      },
+      "setup": "复制到 plugins/，重启；调音台「云端音色克隆」填接口、Key、TTS 接口后创建。",
+      "download": "bundles/tts-cloud-clone.zip",
+      "path": "plugins/tts-cloud-clone",
+      "guide": "plugins/tts-cloud-clone/GUIDE.md",
+      "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/tts-cloud-clone/GUIDE.md",
+      "license": "MIT",
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
     }
   ]
 }

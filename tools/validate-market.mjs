@@ -7,7 +7,7 @@ const file = path.join(root, 'marketplace.json');
 const fails = [];
 const warns = [];
 const ids = new Set();
-const capOk = new Set(['tools', 'hooks', 'embedding', 'tts', 'singing']);
+const capOk = new Set(['tools', 'hooks', 'embedding', 'tts', 'singing', 'voice-clone']);
 
 function fail(m) { fails.push(m); }
 function warn(m) { warns.push(m); }

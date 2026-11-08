@@ -78,11 +78,12 @@
             "type": "array",
             "items": {
               "enum": [
-                "tools",
-                "hooks",
                 "embedding",
+                "hooks",
+                "singing",
+                "tools",
                 "tts",
-                "singing"
+                "voice-clone"
               ]
             }
           },

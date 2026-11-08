@@ -54,7 +54,7 @@
 | `author` | 是 | 作者 |
 | `guideUrl` | 是 | 直接可点的说明/引导链接 |
 | `guide` | 是 | 仓库内说明文件相对路径 |
-| `capabilities` | 是 | `tools` / `hooks` / `embedding` / `tts` / `singing` |
+| `capabilities` | 是 | `tools` / `hooks` / `embedding` / `tts` / `singing` / `voice-clone` |
 | `permissions` | 建议 | `none` / `local-network` / `files` / `network` / `process` |
 | `requires.core` | 是 | 最低主程序版本 |
 | `requires.runtime` | 建议 | 如 `Ollama`、`GPT-SoVITS` |
