@@ -1,0 +1,8 @@
+{
+  "name": "本地 TTS（可选）",
+  "version": "1.0.0",
+  "description": "把文字交给本机 TTS 服务合成；不需要云端 Key。支持通用 POST /tts 和 GPT-SoVITS 的 /tts GET 接口。",
+  "author": "YF-Robot",
+  "homepage": "",
+  "capabilities": ["tts"]
+}

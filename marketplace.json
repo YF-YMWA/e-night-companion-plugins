@@ -30,6 +30,20 @@
         "ollama": "bge-m3 或兼容模型"
       },
       "install": "复制 plugins/embedding-ollama 到主程序 plugins/ 下，配置 memory.embedding 后重启服务。"
+    },
+    {
+      "id": "tts-local",
+      "name": "本地 TTS",
+      "version": "1.0.0",
+      "path": "plugins/tts-local",
+      "description": "把文字交给本机 TTS 服务合成，不需要云端 API Key；支持通用 POST /tts 和 GPT-SoVITS /tts。",
+      "author": "ENbot",
+      "capabilities": ["tts"],
+      "requires": {
+        "core": "0.9.61",
+        "localTts": "GPT-SoVITS 或兼容 HTTP 服务"
+      },
+      "install": "复制 plugins/tts-local 到主程序 plugins/ 下，配置 voice.provider=plugin 后重启服务。"
     }
   ]
 }

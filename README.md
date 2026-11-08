@@ -10,6 +10,7 @@ ENbot / E Night Companion 的可选插件仓库。
 |---|---|---|
 | [demo-dice-notes](plugins/demo-dice-notes/) | tools / hooks | 示例：掷骰子、便签 |
 | [embedding-ollama](plugins/embedding-ollama/) | embedding | 本地 Ollama 向量，推荐 `bge-m3` |
+| [tts-local](plugins/tts-local/) | tts | 本地 TTS，不需要云端 Key；支持 GPT-SoVITS |
 
 机器可读清单：[`marketplace.json`](marketplace.json)。
 
@@ -60,6 +61,10 @@ ollama pull bge-m3
     │   ├── plugin.json
     │   └── index.mjs
     └── embedding-ollama/
+        ├── plugin.json
+        ├── index.mjs
+        └── README.md
+    └── tts-local/
         ├── plugin.json
         ├── index.mjs
         └── README.md
