@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "E Night Companion plugin marketplace",
+  "type": "object",
+  "required": ["version", "name", "plugins"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "updatedAt": { "type": "string" },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "version", "path", "download", "description", "author", "guideUrl", "capabilities", "requires", "setup"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Za-z0-9._-]{1,64}$" },
+          "name": { "type": "string" },
+          "version": { "type": "string" },
+          "path": { "type": "string" },
+          "download": { "type": "string" },
+          "description": { "type": "string" },
+          "author": { "type": "string" },
+          "license": { "type": "string" },
+          "homepage": { "type": "string" },
+          "guideUrl": { "type": "string" },
+          "guide": { "type": "string" },
+          "capabilities": {
+            "type": "array",
+            "items": { "enum": ["tools", "hooks", "embedding", "tts", "singing"] }
+          },
+          "permissions": {
+            "type": "array",
+            "items": { "enum": ["none", "local-network", "files", "network", "process"] }
+          },
+          "requires": {
+            "type": "object",
+            "required": ["core"],
+            "properties": {
+              "core": { "type": "string" },
+              "runtime": { "type": ["string", "array"] },
+              "model": { "type": "string" }
+            }
+          },
+          "setup": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

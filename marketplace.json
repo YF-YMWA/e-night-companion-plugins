@@ -8,52 +8,105 @@
       "id": "demo-dice-notes",
       "name": "示例插件 · 掷骰子与便签",
       "version": "1.0.0",
-      "path": "plugins/demo-dice-notes",
-      "description": "演示插件能做什么：提供掷骰子、记便签、查便签等工具，并挂 onMessage 钩子。",
+      "description": "演示插件结构：掷骰子、便签工具和 onMessage 钩子。",
       "author": "ENbot",
       "capabilities": [
         "tools",
         "hooks"
       ],
+      "permissions": [
+        "none"
+      ],
       "requires": {
-        "core": "0.9.0"
+        "core": "0.9.0",
+        "runtime": []
       },
-      "install": "复制 plugins/demo-dice-notes 到主程序 plugins/ 下，重启服务。",
-      "download": "bundles/demo-dice-notes.zip"
+      "setup": "复制到 plugins/，重启服务后即可使用；不需要额外配置。",
+      "download": "bundles/demo-dice-notes.zip",
+      "path": "plugins/demo-dice-notes",
+      "guide": "plugins/demo-dice-notes/GUIDE.md",
+      "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/demo-dice-notes/GUIDE.md",
+      "license": "MIT",
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
     },
     {
       "id": "embedding-ollama",
       "name": "Ollama Embedding",
       "version": "1.0.0",
-      "path": "plugins/embedding-ollama",
-      "description": "本地 Ollama embedding 向量（推荐 bge-m3），用于记忆混合检索；不装则自动使用本地哈希向量。",
+      "description": "本地 Ollama embedding（推荐 bge-m3），用于记忆混合检索；不可用时自动退回本地哈希向量。",
       "author": "ENbot",
       "capabilities": [
         "embedding"
       ],
+      "permissions": [
+        "local-network"
+      ],
       "requires": {
         "core": "0.9.60",
-        "ollama": "bge-m3 或兼容模型"
+        "runtime": [
+          "Ollama"
+        ],
+        "model": "bge-m3"
       },
-      "install": "复制 plugins/embedding-ollama 到主程序 plugins/ 下，配置 memory.embedding 后重启服务。",
-      "download": "bundles/embedding-ollama.zip"
+      "setup": "安装 Ollama 并启动 11434，拉取 bge-m3；复制插件到 plugins/，开启 memory.embedding 后重启。",
+      "download": "bundles/embedding-ollama.zip",
+      "path": "plugins/embedding-ollama",
+      "guide": "plugins/embedding-ollama/GUIDE.md",
+      "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/embedding-ollama/GUIDE.md",
+      "license": "MIT",
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
     },
     {
       "id": "tts-local",
       "name": "本地 TTS",
       "version": "1.0.0",
-      "path": "plugins/tts-local",
-      "description": "把文字交给本机 TTS 服务合成，不需要云端 API Key；支持通用 POST /tts 和 GPT-SoVITS /tts。",
+      "description": "把文字交给本机 TTS 服务合成，不需要云端 API Key；支持 GPT-SoVITS 和通用 POST /tts。",
       "author": "ENbot",
       "capabilities": [
         "tts"
       ],
+      "permissions": [
+        "local-network"
+      ],
       "requires": {
         "core": "0.9.61",
-        "localTts": "GPT-SoVITS 或兼容 HTTP 服务"
+        "runtime": [
+          "GPT-SoVITS 或兼容 HTTP 服务"
+        ]
       },
-      "install": "复制 plugins/tts-local 到主程序 plugins/ 下，配置 voice.provider=plugin 后重启服务。",
-      "download": "bundles/tts-local.zip"
+      "setup": "启动本地 TTS（GPT-SoVITS 默认 9880），复制插件到 plugins/，在语音设置选「本地插件」后重启。",
+      "download": "bundles/tts-local.zip",
+      "path": "plugins/tts-local",
+      "guide": "plugins/tts-local/GUIDE.md",
+      "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/tts-local/GUIDE.md",
+      "license": "MIT",
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
+    },
+    {
+      "id": "tts-sing",
+      "name": "本地唱歌",
+      "version": "1.0.0",
+      "description": "调用本机 RVC / So-VITS-SVC / DiffSinger 做歌声转换或合成；不含模型。",
+      "author": "ENbot",
+      "capabilities": [
+        "singing"
+      ],
+      "permissions": [
+        "local-network"
+      ],
+      "requires": {
+        "core": "0.9.69",
+        "runtime": [
+          "RVC / So-VITS-SVC / DiffSinger"
+        ]
+      },
+      "setup": "启动本地唱歌 HTTP 服务（示例 7890/sing），复制插件到 plugins/，重启；用 /api/admin/voice/sing 验证。",
+      "download": "bundles/tts-sing.zip",
+      "path": "plugins/tts-sing",
+      "guide": "plugins/tts-sing/GUIDE.md",
+      "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/tts-sing/GUIDE.md",
+      "license": "MIT",
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
     }
   ]
 }

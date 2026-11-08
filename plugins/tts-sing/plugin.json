@@ -1,0 +1,8 @@
+{
+  "name": "本地唱歌（可选）",
+  "version": "1.0.0",
+  "description": "把干声/歌词交给本机 RVC / So-VITS-SVC / DiffSinger 服务做歌声转换或合成；不随主框架打包。",
+  "author": "YF-Robot",
+  "homepage": "",
+  "capabilities": ["singing"]
+}
