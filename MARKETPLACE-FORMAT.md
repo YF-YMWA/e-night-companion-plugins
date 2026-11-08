@@ -87,3 +87,22 @@ node tools/validate-market.mjs
 ## 安全
 
 插件和主程序同进程，能读写文件、联网、跑命令。市场只收录源码可审查、说明完整的插件。
+
+## 作者署名
+
+`author` 是必填字段，必须写真实作者：
+
+```json
+{
+  "author": "GitHub 用户名或昵称",
+  "authorUrl": "https://github.com/<username>",
+  "contributors": ["另一位贡献者"]
+}
+```
+
+规则：
+
+- 其他人 PR：`author` 用 PR 作者名，不能默认写 `ENbot`
+- 多人：主作者 `author`，其他人 `contributors`
+- 插件目录里的 `plugin.json`、`GUIDE.md` 同步作者名
+- 不想公开真名可用 GitHub 用户名/昵称

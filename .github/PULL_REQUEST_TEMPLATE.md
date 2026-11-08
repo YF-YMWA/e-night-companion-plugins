@@ -3,13 +3,20 @@
 - 插件 ID：
 - 名称：
 - 版本：
-- 作者：
+- 作者名（会写进 marketplace.json / plugin.json / GUIDE.md）：
+- GitHub 用户名：
+- 是否允许在市场中显示作者名：是 / 否
 - 能力（tools/hooks/embedding/tts/singing）：
 - 最低主程序版本：
+
+> 如果 PR 不是 ENbot 官方提交，维护者合并前必须把 `author` 改成 PR 作者名，
+> 不能默认写成 `ENbot`；额外贡献者写进 `contributors`。
 
 ## 说明与引导
 
 - [ ] `plugins/<id>/GUIDE.md` 已写清楚安装、配置、使用、卸载
+- [ ] `plugins/<id>/GUIDE.md` 已写作者名
+- [ ] `marketplace.json` 已包含 `author`（和 PR 作者一致）
 - [ ] `marketplace.json` 已包含 `description` / `guideUrl` / `setup`
 - [ ] 依赖运行时/模型已写进 `requires`
 

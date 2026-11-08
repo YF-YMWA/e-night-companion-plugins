@@ -1,5 +1,7 @@
 # Ollama Embedding 插件（可选，不随框架打包）
 
+作者：ENbot
+
 这个目录**不会**进入 `ENbot-v*.zip` 主包。需要自己安装。
 
 ## 1. 安装 Ollama 和模型

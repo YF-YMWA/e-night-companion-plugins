@@ -59,7 +59,8 @@
             "type": "string"
           },
           "author": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "license": {
             "type": "string"
@@ -130,6 +131,15 @@
             "type": "string"
           },
           "setupNotes": {
+            "type": "string"
+          },
+          "contributors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authorUrl": {
             "type": "string"
           }
         }
