@@ -38,13 +38,14 @@ export const tts = {
   id: 'local',
   model: 'local-tts',
 
-  async synthesize({ text, voice, config }, ctx) {
+  async synthesize({ text, voice, config, tuning }, ctx) {
     const cfg = ctx.config || {};
     const voiceCfg = config?.voice || {};
     const mode = String(cfg.mode || 'generic');
     const endpoint = String(
       voiceCfg.localEndpoint || cfg.endpoint || 'http://127.0.0.1:9880/tts',
     );
+    const tune = tuning && typeof tuning === 'object' ? tuning : {};
 
     if (mode === 'gpt-sovits') {
       const u = new URL(endpoint);
@@ -53,6 +54,8 @@ export const tts = {
       if (cfg.referWav) u.searchParams.set('refer_wav_path', String(cfg.referWav));
       if (cfg.promptText) u.searchParams.set('prompt_text', String(cfg.promptText));
       u.searchParams.set('prompt_language', String(cfg.promptLanguage || 'zh'));
+      // 常见 GPT-SoVITS API 支持 speed_factor；不支持的服务会忽略未知参数
+      if (Number(tune.speed) > 0) u.searchParams.set('speed_factor', String(tune.speed));
       const r = await ctx.fetch(u.toString(), {
         method: 'GET',
         signal: AbortSignal.timeout(Number(cfg.timeoutMs) || 60000),
@@ -69,6 +72,7 @@ export const tts = {
         text: String(text),
         voice: String(voice || ''),
         model: String(cfg.model || voiceCfg.ttsModel || ''),
+        tuning: tune,
       }),
       signal: AbortSignal.timeout(Number(cfg.timeoutMs) || 60000),
     });
