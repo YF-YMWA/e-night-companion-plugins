@@ -80,3 +80,52 @@ plugins/embedding-ollama/index.mjs
 - embedding 失败会自动退回本地向量。
 - 插件和核心同进程，只安装自己信任的插件。
 - 首次检索会把记忆文本批量向量化，可能多几十到几百毫秒；之后走缓存。
+
+## Windows 一键准备（推荐）
+
+便携 Ollama 放在：
+
+```text
+default-workspace\Ollama\
+```
+
+首次安装/修复：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Ollama\install-ollama.ps1
+```
+
+加开机自启：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Ollama\install-ollama.ps1 -AutoStart
+```
+
+脚本会下载 Ollama、从 ModelScope/HF 镜像下载 `bge-m3`、创建模型并启动 `11434`。
+
+当前机器已加入启动目录：
+
+```text
+%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\ENbot Ollama.lnk
+```
+
+手动启动：
+
+```text
+Ollama\start-ollama.bat
+```
+
+安装市场插件时，ENbot 会自动写入：
+
+```json
+"memory": {
+  "embedding": {
+    "enabled": true,
+    "plugin": "embedding-ollama",
+    "baseUrl": "http://127.0.0.1:11434",
+    "model": "bge-m3"
+  }
+}
+```
+
+Ollama 没启动时会自动退回本地哈希向量，不会阻塞聊天。
