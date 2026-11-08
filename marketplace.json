@@ -110,6 +110,33 @@
       "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/tts-sing/GUIDE.md",
       "license": "MIT",
       "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
+    },
+    {
+      "id": "tts-sing-cloud",
+      "name": "云端唱歌",
+      "version": "1.0.0",
+      "description": "调用云端歌声合成/歌曲生成 HTTP API，不内置 Key；支持音频、base64、URL 三种返回。",
+      "author": "ENbot",
+      "capabilities": [
+        "singing"
+      ],
+      "permissions": [
+        "network"
+      ],
+      "requires": {
+        "core": "0.9.69",
+        "runtime": [
+          "云端唱歌 API"
+        ],
+        "model": "按厂商"
+      },
+      "setup": "在 /voice-sing 填接口地址/Key，或配置 plugins.items[\"tts-sing-cloud\"]，重启。",
+      "download": "bundles/tts-sing-cloud.zip",
+      "path": "plugins/tts-sing-cloud",
+      "guide": "plugins/tts-sing-cloud/GUIDE.md",
+      "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/tts-sing-cloud/GUIDE.md",
+      "license": "MIT",
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
     }
   ]
 }

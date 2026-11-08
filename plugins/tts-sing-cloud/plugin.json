@@ -1,0 +1,8 @@
+{
+  "name": "云端唱歌（可选）",
+  "version": "1.0.0",
+  "description": "调用云端歌声合成/歌曲生成 HTTP API；不内置 Key，不随主框架打包。",
+  "author": "YF-Robot",
+  "homepage": "",
+  "capabilities": ["singing"]
+}
