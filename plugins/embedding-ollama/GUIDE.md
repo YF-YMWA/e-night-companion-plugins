@@ -129,3 +129,31 @@ Ollama\start-ollama.bat
 ```
 
 Ollama 没启动时会自动退回本地哈希向量，不会阻塞聊天。
+
+## 和 embedding-ollama 插件一起安装
+
+插件包内自带：
+
+```text
+setup-ollama.ps1
+```
+
+在插件目录执行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File setup-ollama.ps1 -AutoStart
+```
+
+脚本会把 Ollama + bge-m3 装到：
+
+```text
+%LOCALAPPDATA%\ENbot\Ollama
+```
+
+不会把 2GB 运行时塞进插件包；更新插件也不会覆盖模型。
+
+执行完回 ENbot：
+
+1. 确认 `memory.embedding.enabled=true`
+2. 重启服务
+3. 日志应出现 `embedding-ollama / bge-m3`

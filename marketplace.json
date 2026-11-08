@@ -54,7 +54,10 @@
       "guide": "plugins/embedding-ollama/GUIDE.md",
       "guideUrl": "https://github.com/YF-YMWA/e-night-companion-plugins/blob/main/plugins/embedding-ollama/GUIDE.md",
       "license": "MIT",
-      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins"
+      "homepage": "https://github.com/YF-YMWA/e-night-companion-plugins",
+      "setupScript": "plugins/embedding-ollama/setup-ollama.ps1",
+      "setupCommand": "powershell -ExecutionPolicy Bypass -File pluginsembedding-ollamasetup-ollama.ps1 -AutoStart",
+      "setupNotes": "脚本下载 Ollama + bge-m3 到 %LOCALAPPDATA%ENbotOllama，不放进插件包"
     },
     {
       "id": "tts-local",

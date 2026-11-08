@@ -33,6 +33,7 @@ for (const p of j.plugins || []) {
 
   if (p.path && !fs.existsSync(path.join(root, p.path))) fail(`${id}: path 不存在 ${p.path}`);
   if (p.guide && !fs.existsSync(path.join(root, p.guide))) fail(`${id}: guide 不存在 ${p.guide}`);
+  if (p.setupScript && !fs.existsSync(path.join(root, p.setupScript))) fail(`${id}: setupScript 不存在 ${p.setupScript}`);
   if (p.download) {
     const z = path.join(root, p.download);
     if (!fs.existsSync(z)) fail(`${id}: download 不存在 ${p.download}`);
