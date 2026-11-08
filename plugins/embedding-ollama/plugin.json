@@ -1,0 +1,11 @@
+{
+  "name": "Ollama Embedding（可选）",
+  "version": "1.0.0",
+  "description": "给记忆检索提供本地 Ollama embedding 向量；不随主框架打包，需要单独安装",
+  "author": "YF-Robot",
+  "homepage": "",
+  "embedding": {
+    "id": "ollama",
+    "model": "bge-m3"
+  }
+}
