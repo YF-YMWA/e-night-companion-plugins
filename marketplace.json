@@ -11,11 +11,15 @@
       "path": "plugins/demo-dice-notes",
       "description": "演示插件能做什么：提供掷骰子、记便签、查便签等工具，并挂 onMessage 钩子。",
       "author": "ENbot",
-      "capabilities": ["tools", "hooks"],
+      "capabilities": [
+        "tools",
+        "hooks"
+      ],
       "requires": {
         "core": "0.9.0"
       },
-      "install": "复制 plugins/demo-dice-notes 到主程序 plugins/ 下，重启服务。"
+      "install": "复制 plugins/demo-dice-notes 到主程序 plugins/ 下，重启服务。",
+      "download": "bundles/demo-dice-notes.zip"
     },
     {
       "id": "embedding-ollama",
@@ -24,12 +28,15 @@
       "path": "plugins/embedding-ollama",
       "description": "本地 Ollama embedding 向量（推荐 bge-m3），用于记忆混合检索；不装则自动使用本地哈希向量。",
       "author": "ENbot",
-      "capabilities": ["embedding"],
+      "capabilities": [
+        "embedding"
+      ],
       "requires": {
         "core": "0.9.60",
         "ollama": "bge-m3 或兼容模型"
       },
-      "install": "复制 plugins/embedding-ollama 到主程序 plugins/ 下，配置 memory.embedding 后重启服务。"
+      "install": "复制 plugins/embedding-ollama 到主程序 plugins/ 下，配置 memory.embedding 后重启服务。",
+      "download": "bundles/embedding-ollama.zip"
     },
     {
       "id": "tts-local",
@@ -38,12 +45,15 @@
       "path": "plugins/tts-local",
       "description": "把文字交给本机 TTS 服务合成，不需要云端 API Key；支持通用 POST /tts 和 GPT-SoVITS /tts。",
       "author": "ENbot",
-      "capabilities": ["tts"],
+      "capabilities": [
+        "tts"
+      ],
       "requires": {
         "core": "0.9.61",
         "localTts": "GPT-SoVITS 或兼容 HTTP 服务"
       },
-      "install": "复制 plugins/tts-local 到主程序 plugins/ 下，配置 voice.provider=plugin 后重启服务。"
+      "install": "复制 plugins/tts-local 到主程序 plugins/ 下，配置 voice.provider=plugin 后重启服务。",
+      "download": "bundles/tts-local.zip"
     }
   ]
 }
