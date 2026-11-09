@@ -159,3 +159,9 @@ powershell -ExecutionPolicy Bypass -File setup-ollama.ps1 -AutoStart
 1. 确认 `memory.embedding.enabled=true`
 2. 重启服务
 3. 日志应出现 `embedding-ollama / bge-m3`
+
+
+## 开机启动安全警告
+
+Windows 启动目录里直接放 `.bat` 会弹“无法验证发布者”。
+插件包已改为 `start-ollama.vbs` + `wscript.exe` 静默启动，不再弹窗。

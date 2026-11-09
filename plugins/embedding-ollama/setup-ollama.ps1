@@ -68,7 +68,9 @@ if not errorlevel 1 exit /b 0
 start "" /min "%~dp0ollama.exe" serve
 "@ | Set-Content -Path $bat -Encoding ASCII
 
-Start-Process -FilePath $bat -WorkingDirectory $dir -WindowStyle Hidden
+$vbs = Join-Path $dir 'start-ollama.vbs'
+Copy-Item (Join-Path $PSScriptRoot 'start-ollama.vbs') $vbs -Force
+Start-Process -FilePath (Join-Path $env:SystemRoot 'System32\wscript.exe') -ArgumentList ('//B "' + $vbs + '"') -WorkingDirectory $dir -WindowStyle Hidden
 Start-Sleep -Seconds 3
 try {
   $r = Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:11434/api/embed' `
@@ -84,7 +86,8 @@ if ($AutoStart) {
   $lnk = Join-Path $startup 'ENbot Ollama.lnk'
   $ws = New-Object -ComObject WScript.Shell
   $sc = $ws.CreateShortcut($lnk)
-  $sc.TargetPath = $bat
+  $sc.TargetPath = Join-Path $env:SystemRoot 'System32\wscript.exe'
+  $sc.Arguments = '//B "' + (Join-Path $dir 'start-ollama.vbs') + '"'
   $sc.WorkingDirectory = $dir
   $sc.WindowStyle = 7
   $sc.Save()
